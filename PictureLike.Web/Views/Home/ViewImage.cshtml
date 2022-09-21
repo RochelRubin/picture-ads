@@ -1,0 +1,20 @@
+﻿@model PictureViewModel
+<div class="row">
+    <input type="hidden" id="image-id" value="@Model.Picture.Id" />
+    <div class="col-md-10 col-md-offset-1 well">
+        <h1>@Model.Picture.Name</h1>
+        <img src="/uploads/@Model.Picture.Title" style="width: 900px;" />
+        <br />
+        <br />
+        @if (Model.AlreadySaw != null && Model.AlreadySaw.Contains(Model.Picture.Id))
+        {
+            <button disabled id="like-button" class="btn btn-primary btn-lg">LIKE</button>
+
+        }
+        else
+        {
+            <button id="like-button" class="btn btn-primary btn-lg">LIKE</button>
+        }
+        Current Likes: <span id="likes-count">@Model.Picture.Likes</span>
+    </div>
+</div>

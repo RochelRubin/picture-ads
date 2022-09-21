@@ -1,0 +1,16 @@
+﻿@model PictureViewModel
+@foreach (var picture in Model.Pictures)
+{
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="jumbotron" style="margin-bottom: 20px; text-align: center;">
+                <a href="/home/viewimage?id=@picture.Id">
+                    <h3>@picture.Name</h3>
+                    <h5>Uploaded at: @picture.Date.ToLongDateString()</h5>
+                    <img style="width: 400px;" src="/uploads/@picture.Title" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+}
